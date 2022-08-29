@@ -1,0 +1,5 @@
+# Project exclude paths
+/seata-account/target/
+/seata-api/target/
+/seata-product/target/
+/seata-store/target/

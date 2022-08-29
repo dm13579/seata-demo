@@ -1,0 +1,28 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: seata-store-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 122.51.157.42:8848
+        namespace: 5efba972-f7c4-4bfc-8b71-7d01a16026e3
+      config:
+        server-addr: 122.51.157.42:8848
+        file-extension: yml
+        group: STORE
+        shared-configs:
+          - dataId: store-db.yml
+            group: "STORE"
+            refresh: true
+        namespace: 5efba972-f7c4-4bfc-8b71-7d01a16026e3
+logging:
+  level:
+    com:
+     alibaba:
+      cloud:
+        nacos:
+          client: warn

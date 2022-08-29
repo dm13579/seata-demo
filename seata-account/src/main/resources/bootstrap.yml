@@ -1,0 +1,28 @@
+server:
+  port: 6666
+spring:
+  application:
+    name: seata-account-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 122.51.157.42:8848
+        namespace: 5efba972-f7c4-4bfc-8b71-7d01a16026e3
+      config:
+        server-addr: 122.51.157.42:8848
+        file-extension: yml
+        group: ACCOUNT
+        shared-configs:
+          - dataId: account-db.yml
+            group: "ACCOUNT"
+            refresh: true
+        namespace: 5efba972-f7c4-4bfc-8b71-7d01a16026e3
+logging:
+  level:
+    com:
+     alibaba:
+      cloud:
+        nacos:
+          client: warn
